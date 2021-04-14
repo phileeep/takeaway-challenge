@@ -1,6 +1,6 @@
 class Menu
 
-attr_reader :items
+attr_reader :dish
 
   def initialize
     @dish = 

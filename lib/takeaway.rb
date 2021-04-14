@@ -3,7 +3,7 @@ require_relative 'menu'
 
 class Takeaway
 
-  attr_reader :shoppingcart
+  attr_reader :shoppingcart, :menu
 
   def initialize
     @shoppingcart = []
@@ -14,8 +14,8 @@ class Takeaway
     "What would you like to order? We currently have....#{@menu.show_menu}"
   end
 
-  def add(item)
-    @shoppingcart << @items[item.capitalize] 
+  def add(item, quantity = 1)
+    quantity.times { @shoppingcart << @menu.dish[item.capitalize] } 
     # blocker: to convert it over to being a symbol, 
     # this wasn't needed actually. hash was the wrong values.
     "#{item.capitalize} added to your basket. The total currently is £#{total}"
