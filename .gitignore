@@ -1,4 +1,5 @@
 /**/.DS_Store
+/**/.private.rb
 /coverage
 
 # Local cache of Rubocop remote config
