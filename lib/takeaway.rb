@@ -1,20 +1,17 @@
 require 'twilio-ruby'
+require_relative 'menu'
 
 class Takeaway
 
-  attr_reader :items, :shoppingcart
+  attr_reader :shoppingcart
 
   def initialize
-    @items = 
-    { "Margarita" => 8.99, "Vegetarian" => 9.99, "Pepperoni" => 10.99, 
-    "Cheesecake" => 3.99, "Water" => 0.99 }
-
     @shoppingcart = []
+    @menu = Menu.new
   end
 
   def read_menu
-    p "What would you like to order? We currently have...."
-    p @items
+    "What would you like to order? We currently have....#{@menu.show_menu}"
   end
 
   def add(item)
